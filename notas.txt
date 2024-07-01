@@ -1,0 +1,13 @@
+********************************
+*****desplegar a produccion*****
+********************************
+uso fl0 (buscar pagina) para hacer el deploy
+lo recomienda pq tiene una capa gratuita q funciona bastante bien
+
+
+
+
+********************************
+**********
+********************************
+
