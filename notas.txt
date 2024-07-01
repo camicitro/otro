@@ -3,11 +3,34 @@
 ********************************
 uso fl0 (buscar pagina) para hacer el deploy
 lo recomienda pq tiene una capa gratuita q funciona bastante bien
-
+(app.fl0)
 
 
 
 ********************************
-**********
+************  MVC   ************
 ********************************
+es un patron de arq (modelo - vista - controlador)
+
+separar aplicacion en 3 componentes interconectados:
+    * modelo --> logica del negocio, estructura, se encarga de acceder a bd, de actualizar info, ver si integridad de los datos es correcta, etc
+        se comunica con mysql, mongo, etc
+        + validaciones para asegurar que datos no son maliciosos, q son validso. suelen ser validaciones de reglas de negocios, relacionados con persistencia, por ej verificar q no ingresen un usuario q ya exista o un mail q ya exista, etc
+    * vista --> importante para el usuario, permite al usuario interactuar, le presenta los datos, envia acciones desde aca (interfaz del usuario)
+        Next.js, react, json
+        + validaciones de interfaz de usuario (para mejorar UX)
+    * controlador --> actua como intermediario entre modelo y vista, responde a entradas de usuario, las trata y ver si le solicita al modelo las operaciones
+        + generalmente las validaciones se centran en formato y coherencia, q se puedan procesar los datos y enviarlos al modelo
+
+Para que funcionen las 3 partes deben interactuar:
+    1- controlador inicia la vista (antes le pide los datos al modelo)
+    2- usuario usa el sist, pide acciones
+    3- en base a lo que pide el usuario, el controlador solicita al modelo
+    4- modelo le devuelve al controlador lo pedido
+
+la ventaja es separar la logica de negocio del modelo de la interfaz y el controlador, podemos hacer cambio en una de las capas y no modifica a las otras
+
+
+
+
 
