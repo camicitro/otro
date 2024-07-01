@@ -6,9 +6,15 @@ const movieSchema = z.object({
         required_error: "Movie title is required"
     }), 
     year: z.number().int().min(1900).max(2024),
+    director: z.string({
+        invalid_type_error: "Movie director must be a string",
+        required_error: "Movie director is required"
+    }),
+    //rate: z.number().min(0).max(10).optional(),
     duration: z.number().int().positive(),
+    rate: z.number().positive(),
     genre: z.array(
-        z.enum(['Accion', 'Familiar', 'Fantasia', 'Terror', 'Comedia', 'Romance', 'Aventura', 'Drama', 'Ciencia ficcion'])
+        z.enum(['Action', 'Familiar', 'Fantasy', 'Horror', 'Comedy', 'Romance', 'Adventure', 'Drama', 'Sci-fi', 'Crime'])
     )
 })
 
